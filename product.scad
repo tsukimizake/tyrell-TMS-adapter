@@ -44,7 +44,7 @@ difference() {
     }
     translate([40.0,43.0,-1.0]) cube([20.0, 7.0, 13.0]);
   }
-  translate([42.5,4.0,0.0]) 
+  translate([42.5,19.0,0.0]) 
     union() {
       cylinder(r=2.6, h=30.0);
       cylinder(r=4.5, h=10.0);

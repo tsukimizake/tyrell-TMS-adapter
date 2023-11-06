@@ -65,7 +65,7 @@ boltHoles =
       OS.cylinder 2.6 30 def & OS.translate (15, 36, 0),
       boltHeadHole & OS.translate (15, 36, 0)
     ]
-    & OS.translate (42.5, 4, 0)
+    & OS.translate (42.5, 19, 0)
 
 boltHeadHole :: OS.Model3d
 boltHeadHole =
