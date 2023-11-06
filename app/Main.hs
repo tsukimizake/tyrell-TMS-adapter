@@ -6,16 +6,16 @@ import Prelude
 
 sample :: OS.Model3d
 sample =
-  adapterInner
+  -- adapterInner
 
--- OS.diff
---  adapterHull
---  [ adapterInner,
---    adapterWindow,
---    upperLeverWindow,
---    hookReceiver,
---    boltHoles
---  ]
+  OS.diff
+    adapterHull
+    [ adapterInner,
+      adapterWindow,
+      upperLeverWindow,
+      hookReceiver,
+      boltHoles
+    ]
 
 adapterHull :: OS.Model3d
 adapterHull = OS.box 100 65 14
@@ -24,12 +24,12 @@ adapterInner :: OS.Model3d
 adapterInner =
   let a = (0, 0, 0) -- 0
       b = (82, 0, 0) -- 1
-      c = (79, 59, 0) -- 2
-      d = (0, 59, 0) -- 3
+      c = (79.5, 59, 0) -- 2
+      d = (2, 59, 0) -- 3
       e = (0, 0, 4.4) -- 4
-      f = (83, 0, 4.4) -- 5
-      g = (79, 59, 3.9) -- 6
-      h = (0, 59, 3.9) -- 7
+      f = (82, 0, 4.4) -- 5
+      g = (79.5, 59, 3.9) -- 6
+      h = (2, 59, 3.9) -- 7
    in OS.unsafePolyhedron
         10
         [a, b, c, d, e, f, g, h, a, b, f, e, b, c, g, f, c, d, h, g, d, a, e, h]
