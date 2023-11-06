@@ -477,14 +477,14 @@ obCylinder r1 h r2 f = Solid $ ObCylinder r1 h r2 f
 -- error that is caught by the library.
 polyhedron :: Int -> [[Vector3d]] -> Model3d
 polyhedron convexity paths
-  -- \| any ((< 3) . length) paths = error "Some face has fewer than 3 points."
-  -- \| any collinear paths = error "Some face has collinear points."
-  -- \| (not . all coplanar) paths = error "Some face isn't coplanar."
-  -- \| length vectors /= length (nub vectors) =
-  --     error "Some faces have different orientation."
-  -- \| 2 * length edges /= length vectors = error "Some edges are not in two faces."
-  -- \| xCross headMax xMax tailMax > 0 =
-  --     error "Face orientations are counterclockwise."
+  | any ((< 3) . length) paths = error "Some face has fewer than 3 points."
+  | any collinear paths = error "Some face has collinear points."
+  | (not . all coplanar) paths = error "Some face isn't coplanar."
+  | length vectors /= length (nub vectors) =
+      error "Some faces have different orientation."
+  | 2 * length edges /= length vectors = error "Some edges are not in two faces."
+  | xCross headMax xMax tailMax > 0 =
+      error "Face orientations are counterclockwise."
   | otherwise = Solid . Polyhedron convexity points $ sides sidesIn
   where
     vectors = concatMap (\p -> zip p (tail p ++ [head p])) paths
