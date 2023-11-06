@@ -39,13 +39,13 @@ adapterInner =
 
 adapterWindow :: OS.Model3d
 adapterWindow =
-  OS.box 60 61 12
-    & OS.translate (20, -1, -3)
+  OS.box 61 61 12
+    & OS.translate (20.5, -1, -3)
 
 upperLeverWindow :: OS.Model3d
 upperLeverWindow =
-  OS.box 20 61 6
-    & OS.translate (40, 20, -1)
+  OS.box 22 61 7
+    & OS.translate (39, 20, -1)
 
 hookReceiver :: OS.Model3d
 hookReceiver =
