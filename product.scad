@@ -3,7 +3,7 @@ difference() {
     difference() {
       difference() {
         difference() {
-          cube([100.0, 65.0, 14.0]);
+          translate([2.5,0.0,1.5]) cube([95.0, 63.0, 12.0]);
           translate([0.0,-1.0,0.0]) 
             translate([8.0,0.0,5.0]) 
               polyhedron( points=[ [0.0,0.0,0.0]

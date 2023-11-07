@@ -18,7 +18,7 @@ sample =
     ]
 
 adapterHull :: OS.Model3d
-adapterHull = OS.box 100 65 14
+adapterHull = OS.box 95 63 12 & OS.translate (2.5, 0, 1.5)
 
 adapterInner :: OS.Model3d
 adapterInner =
