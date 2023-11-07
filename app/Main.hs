@@ -32,7 +32,7 @@ adapterInner =
       h = (2, 61, 3.9) -- 7
    in OS.unsafePolyhedron
         10
-        [a, b, c, d, e, f, g, h, a, b, f, e, b, c, g, f, c, d, h, g, d, a, e, h]
+        [a, b, c, d, e, f, g, h]
         (Faces [[0, 1, 2, 3], [4, 5, 1, 0], [7, 6, 5, 4], [5, 6, 2, 1], [6, 7, 3, 2], [7, 4, 0, 3]])
         & OS.translate (10, 0, 5)
         & OS.translate (0, -1, 0)
