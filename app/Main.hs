@@ -69,7 +69,7 @@ boltHoles =
 
 boltHeadHole :: OS.Model3d
 boltHeadHole =
-  OS.cylinder 4.5 10 def
+  OS.cylinder 4.7 10 def
 
 main :: IO ()
 main = do
