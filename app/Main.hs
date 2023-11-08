@@ -4,6 +4,12 @@ import Data.Function ((&))
 import OpenSCAD as OS
 import Prelude
 
+-- botLR = 85.2
+-- topLR = 2.1
+-- botZ = 4.73
+-- topZ = 4.23
+-- winW = 61
+-- levWinW = 22
 sample :: OS.Model3d
 sample =
   -- adapterInner
@@ -78,5 +84,8 @@ boltHeadHole =
   OS.cylinder 4.7 10 def
 
 main :: IO ()
-main = do
-  sample & OS.render & writeFile "product.scad"
+main =
+  do
+    sample -- <> (sample & mirror (1, 0, 0))
+    & OS.render
+    & writeFile "product.scad"
