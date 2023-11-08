@@ -23,7 +23,7 @@ adapterHull = OS.box 95 63 12 & OS.translate (2.5, 0, 1.5)
 adapterInner :: OS.Model3d
 adapterInner =
   let topL = 1.5 + 0.6
-      topR = 83 + 1.2
+      topR = 83
       botL = 0
       botR = 84 + 1.2
       botZ = 4.4 + 0.33
