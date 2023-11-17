@@ -22,8 +22,8 @@ difference() {
         , convexity=10 );
       translate([0.0,-1.0,-3.0]) cube([31.0, 61.0, 12.0]);
       translate([0.0,20.0,0.0]) cube([11.0, 61.0, 7.0]);
-      translate([0.0,43.0,-1.0]) cube([11.0, 7.0, 13.0]);
-      translate([7.5,19.0,0.0]) 
+      translate([0.0,43.5,-1.0]) cube([11.0, 7.0, 13.0]);
+      translate([7.5,19.3,0.0]) 
         union() {
           cylinder(r=2.8, h=30.0);
           cylinder(r=4.7, h=10.0);
@@ -52,8 +52,8 @@ difference() {
         , convexity=10 );
       translate([0.0,-1.0,-3.0]) cube([31.0, 61.0, 12.0]);
       translate([0.0,20.0,0.0]) cube([11.0, 61.0, 7.0]);
-      translate([0.0,43.0,-1.0]) cube([11.0, 7.0, 13.0]);
-      translate([7.5,19.0,0.0]) 
+      translate([0.0,43.5,-1.0]) cube([11.0, 7.0, 13.0]);
+      translate([7.5,19.3,0.0]) 
         union() {
           cylinder(r=2.8, h=30.0);
           cylinder(r=4.7, h=10.0);

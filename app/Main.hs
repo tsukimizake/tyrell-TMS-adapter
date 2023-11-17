@@ -71,7 +71,7 @@ upperLeverWindow =
 hookReceiver :: OS.Model3d
 hookReceiver =
   OS.box 11 7 13
-    & OS.translate (0, 43, -1)
+    & OS.translate (0, 43.5, -1)
 
 -- pitch: 36mm, 15mm 5M bolt
 boltHoles :: OS.Model3d
@@ -82,7 +82,7 @@ boltHoles =
       OS.cylinder 2.8 30 def & OS.translate (0, 36, 0),
       boltHeadHole & OS.translate (0, 36, 0)
     ]
-    & OS.translate (7.5, 19, 0)
+    & OS.translate (7.5, 19.3, 0)
 
 boltHeadHole :: OS.Model3d
 boltHeadHole =
