@@ -25,7 +25,7 @@ adapterHull :: OS.Model3d
 adapterHull =
   OS.intersection
     [ OS.minkowski
-        [ OS.box 47 61 9,
+        [ OS.box 47 61 10,
           OS.cylinder 1 1 def
         ],
       OS.cube 200 & OS.translate (0, -10, 0)

@@ -6,7 +6,10 @@ union() {
           difference() {
             translate([0.0,0.0,2.5]) 
               intersection() {
-                minkowski() {  cube([47.0, 61.0, 9.0]); cylinder(r=1.0, h=1.0);}
+                minkowski() {
+                  cube([47.0, 61.0, 10.0]);
+                  cylinder(r=1.0, h=1.0);
+                }
                 translate([0.0,-10.0,0.0]) cube([200.0, 200.0, 200.0]);
               }
             translate([0.0,-1.0,5.0]) 
@@ -49,7 +52,7 @@ union() {
               translate([0.0,0.0,2.5]) 
                 intersection() {
                   minkowski() {
-                    cube([47.0, 61.0, 9.0]);
+                    cube([47.0, 61.0, 10.0]);
                     cylinder(r=1.0, h=1.0);
                   }
                   translate([0.0,-10.0,0.0]) cube([200.0, 200.0, 200.0]);
