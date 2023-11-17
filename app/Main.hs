@@ -12,25 +12,29 @@ import Prelude
 -- levWinW = 22
 sample :: OS.Model3d
 sample =
-  OS.diff
-    adapterHull
-    [ adapterInner,
-      adapterWindow,
-      upperLeverWindow,
-      hookReceiver,
-      boltHoles
-    ]
+  let inner =
+        OS.union
+          [ adapterInner,
+            adapterWindow,
+            upperLeverWindow,
+            hookReceiver,
+            boltHoles
+          ]
+   in OS.diff
+        adapterHull
+        [ inner,
+          inner & mirror (1, 0, 0)
+        ]
 
 adapterHull :: OS.Model3d
 adapterHull =
   OS.intersection
     [ OS.minkowski
-        [ OS.box 47 61 10,
+        [ OS.box 94 61 10,
           OS.cylinder 1 1 def
-        ],
-      OS.cube 200 & OS.translate (0, -10, 0)
+        ]
     ]
-    & OS.translate (0, 0, 2.5)
+    & OS.translate (-47, 0, 2.5)
 
 adapterInner :: OS.Model3d
 adapterInner =
@@ -87,6 +91,6 @@ boltHeadHole =
 main :: IO ()
 main =
   do
-    sample <> (sample & mirror (1, 0, 0))
+    sample
     & OS.render
     & writeFile "product.scad"
