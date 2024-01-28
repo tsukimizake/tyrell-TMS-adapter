@@ -1,3 +1,4 @@
+$fs=0.01;
 difference() {
   difference() {
     difference() {
