@@ -17,22 +17,23 @@ sample =
           [ adapterInner,
             adapterWindow,
             upperLeverWindow,
-            hookReceiver,
-            boltHoles
+            hookReceiver
           ]
    in OS.diff
         adapterHull
         [ inner,
-          inner & mirror (1, 0, 0)
+          inner & mirror (1, 0, 0),
+          boltHoles & rotate3d (0, 5, 0),
+          boltHoles & mirror (1, 0, 0) & rotate3d (0, 5, 0)
         ]
 
 adapterHull :: OS.Model3d
 adapterHull =
-  OS.intersection
-    [ OS.minkowski
-        [ OS.box 94 61 10,
-          OS.cylinder 1 1 def
-        ]
+  OS.minkowski
+    [ OS.diff
+        (OS.box 94 61 20)
+        [OS.box 200 61 20 & OS.rotate3d (0, 5, 0) & OS.translate (-100, 0, 28)],
+      OS.cylinder 1 1 def
     ]
     & OS.translate (-47, 0, 2.5)
 
@@ -78,7 +79,7 @@ boltHoles :: OS.Model3d
 boltHoles =
   OS.union
     [ OS.cylinder 2.8 30 def,
-      boltHeadHole,
+      boltHeadHole & OS.translate (0, 0, 0),
       OS.cylinder 2.8 30 def & OS.translate (0, 36, 0),
       boltHeadHole & OS.translate (0, 36, 0)
     ]
@@ -86,7 +87,7 @@ boltHoles =
 
 boltHeadHole :: OS.Model3d
 boltHeadHole =
-  OS.cylinder 4.7 10 def
+  OS.cylinder 4.7 12 def
 
 main :: IO ()
 main =
