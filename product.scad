@@ -1,3 +1,4 @@
+$fs=0.01;
 difference() {
   difference() {
     translate([-47.0,0.0,2.5]) 

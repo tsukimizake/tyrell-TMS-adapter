@@ -202,7 +202,6 @@ import Data.Colour.SRGB (channelBlue, channelGreen, channelRed, toSRGB)
 import Data.List (elemIndices, nub)
 import Data.Maybe (catMaybes)
 import qualified Data.Set as Set
-import Debug.Trace
 import Prettyprinter ((<+>))
 import qualified Prettyprinter as PP
 
@@ -624,7 +623,7 @@ hull = Hull
 -- | 'render' does all the real work. It will walk the AST for a 'Model',
 -- returning an OpenSCAD program in a 'String'.
 render :: Vector v => Model v -> String
-render = show . PP.pretty
+render = ("$fs=0.01;\n" <>) . show . PP.pretty
 
 instance Vector v => PP.Pretty (Model v) where
   pretty =
